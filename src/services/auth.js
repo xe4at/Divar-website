@@ -6,7 +6,16 @@ const sendOtp = async (mobile) => {
     return { response };
   } catch (error) {
     return { error };
-  } 
+  }
 };
 
-export { sendOtp };
+const checkOtp = async (mobile, code) => {
+  try {
+    const response = await api.post("auth/check-otp", { mobile, code });
+    return { response };
+  } catch (error) {
+    return { error };
+  }
+};
+
+export { sendOtp, checkOtp };
