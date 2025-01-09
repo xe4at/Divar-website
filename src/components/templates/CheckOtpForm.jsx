@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { checkOtp } from "../../services/auth";
+import { setCookies } from "../../utils/cookies";
 
 function CheckOtpForm({ code, setCode, setStep, mobile }) {
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ function CheckOtpForm({ code, setCode, setStep, mobile }) {
       console.log({ response, error });
 
       if (response) {
-        console.log("Response:", response);
+        setCookies(response.data);
       }
 
       if (error) {
@@ -88,4 +89,3 @@ export default CheckOtpForm;
 // }
 
 // export default CheckOtpForm;
-  
