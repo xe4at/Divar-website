@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { checkOtp } from "../../services/auth";
-import { setCookies } from "../../utils/cookies";
+import { checkOtp } from "services/auth";
+import { setCookies } from "utils/cookies";
 
 function CheckOtpForm({ code, setCode, setStep, mobile }) {
   const [loading, setLoading] = useState(false);
