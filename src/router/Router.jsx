@@ -1,9 +1,10 @@
+import { Routes, Route } from "react-router-dom";
+
 import AuthPage from "pages/AuthPage";
 import HomePage from "pages/HomePage";
 import DashboardPage from "pages/DashboardPage";
 import Adminpage from "pages/Adminpage";
 import PageNotFound from "pages/404";
-import { Routes, Route } from "react-router-dom";
 
 function Router() {
   return (
