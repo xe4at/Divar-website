@@ -13,7 +13,7 @@ function CheckOtpForm({ code, setCode, setStep, mobile }) {
     setLoading(true);
     try {
       const { response, error } = await checkOtp(mobile, code);
-      console.log({ response, error });
+      // console.log({ response, error });
 
       if (response) {
         setCookies(response.data);

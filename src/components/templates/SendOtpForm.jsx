@@ -22,7 +22,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
       setErrorMessage(error.response?.data?.message || "خطایی رخ داده است.");
     }
 
-    console.log({ response, error });
+    // console.log({ response, error });
   };
 
   return (
