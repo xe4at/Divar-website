@@ -31,7 +31,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
     <form onSubmit={submitHandler} className={styles.form}>
       <p>ورود به حساب کاربری</p>
       <span>
-        برای استفاده از امکانات ویوار لطفا شماره موبایل خود را وارد کنید . کد
+        برای استفاده از امکانات دیوار لطفا شماره موبایل خود را وارد کنید . کد
         تایید شده به این شماره پیامک خواهد شد.
       </span>
       <label htmlFor="input">شماره موبایل خود را وارد کنید</label>

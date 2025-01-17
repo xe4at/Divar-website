@@ -29,7 +29,7 @@
 }
 
 .form button {
-  width: 70px;
+  width: 130px;
   padding: 5px 10px;
   border: none;
   background-color: #a62626;
@@ -42,6 +42,11 @@
   background-color: #fff;
   color: #a62626;
   border: 1px solid #a62626;
-  width: 150px;
+  width: 130px;
   margin-top: 20px;
+}
+
+.form .backButton:hover{
+  background-color: #a62626;
+  color: #fff;
 }
