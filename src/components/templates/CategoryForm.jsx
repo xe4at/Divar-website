@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./CategoryForm.module.css";
 import { useMutation } from "@tanstack/react-query";
 import { addCategory } from "../../services/admin";
 
 function CategoryForm() {
   const [form, setForm] = useState({ name: "", slug: "", icon: "" });
-  const [formStatus, setFormStatus] = useState({ success: false, error: false, conflict: false });
+  const [formStatus, setFormStatus] = useState({
+    success: false,
+    error: false,
+    conflict: false,
+  });
   const [loading, setLoading] = useState(false);
   const [validationError, setValidationError] = useState("");
-  
+
   const { mutate, isLoading, error, data } = useMutation(addCategory, {
     onMutate: () => {
       setLoading(true);
@@ -31,14 +35,14 @@ function CategoryForm() {
       setTimeout(() => {
         setFormStatus({ success: false, error: false, conflict: false });
       }, 4000);
-    }
+    },
   });
-  
+
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
     setValidationError("");
   };
-  
+
   const submitHandler = (event) => {
     event.preventDefault();
     if (!form.name || !form.slug || !form.icon) {
@@ -53,13 +57,31 @@ function CategoryForm() {
       <h3>دسته بندی جدید</h3>
 
       <label htmlFor="name">اسم دسته بندی</label>
-      <input type="text" name="name" id="name" value={form.name} onChange={changeHandler} />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value={form.name}
+        onChange={changeHandler}
+      />
 
       <label htmlFor="slug">اسلاگ</label>
-      <input type="text" name="slug" id="slug" value={form.slug} onChange={changeHandler} />
+      <input
+        type="text"
+        name="slug"
+        id="slug"
+        value={form.slug}
+        onChange={changeHandler}
+      />
 
       <label htmlFor="icon">آیکون</label>
-      <input type="text" name="icon" id="icon" value={form.icon} onChange={changeHandler} />
+      <input
+        type="text"
+        name="icon"
+        id="icon"
+        value={form.icon}
+        onChange={changeHandler}
+      />
 
       {validationError && <p>{validationError}</p>}
       {formStatus.error && <p>مشکلی پیش اومده جیگر</p>}

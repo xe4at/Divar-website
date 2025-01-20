@@ -18,7 +18,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
 
     if (response) {
       setStep(2);
-      setErrorMessage(""); // پاک کردن پیام خطا در صورت موفقیت‌آمیز بودن درخواست
+      setErrorMessage(""); 
     }
     if (error) {
       setErrorMessage(error.response?.data?.message || "خطایی رخ داده است.");
