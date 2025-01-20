@@ -1,16 +1,38 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+
 import { getCategory } from "../../services/admin";
 
+import styles from "./AddPost.module.css";
+
 function AddPost() {
+  const [form, setForm] = useState({
+    title: "",
+    content: "",
+    category: "",
+    city: "",
+    amount: null,
+    images: null,
+  });
+
   const { data } = useQuery(["get-categoris"], getCategory);
+
+  const changeHandler = (event) => {
+    const name = event.target.name;
+    if (name !== "images") {
+      setForm({ ...form, [name]: event.target.value });
+    } else {
+      setForm({ ...form, [name]: event.target.files[0] });
+    }
+  };
 
   const addHandler = (event) => {
     event.preventDefault();
-    console.log("sent");
+    console.log(form);
   };
 
   return (
-    <form>
+    <form onChange={changeHandler} className={styles.form}>
       <h3>افزودن آگهی</h3>
       <label htmlFor="title">عنوان</label>
       <input type="text" name="title" id="title" />
