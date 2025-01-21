@@ -11,7 +11,7 @@ import '../styles/PageNotFound.css';  // فایل CSS را برای استایل
 function PageNotFound() {
   return (
     <div className="page-not-found">
-      <img src="./404-error.svg" alt="Page Not Found" />
+      <img src="../page-not-found.svg" alt="Page Not Found" />
       <h1>اوه! صفحه‌ای که دنبال آن بودید یافت نشد.</h1>
       <p>متاسفانه صفحه مورد نظر شما پیدا نشد. شاید بخواهید به صفحه اصلی برگردید.</p>
       <a href="/" className="home-link">بازگشت به صفحه اصلی</a>

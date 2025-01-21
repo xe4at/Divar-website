@@ -34,6 +34,16 @@ label {
   color: #333;
 }
 
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.errorInput::placeholder {
+  color: red;
+  opacity: 1;
+}
+
 input[type="text"],
 textarea,
 select,
