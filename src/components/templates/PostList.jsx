@@ -11,14 +11,14 @@ function PostList() {
   console.log(data);
 
   return (
-    <div className={styles.posts}>
+    <div className={styles.list}>
       {isLoading ? (
         <Loader />
       ) : (
         <>
           <h3>آگهی های شما</h3>
           {data.data.posts.map((post) => (
-            <div key={post._id}>
+            <div key={post._id} className={styles.post}>
               {post.images[0] ? (
                 <img src={`${baseUrl}${post.images[0]}`} />
               ) : (
@@ -28,7 +28,7 @@ function PostList() {
                 <p>{post.options.title}</p>
                 <span>{post.options.content}</span>
               </div>
-              <div className={styles.meta }>
+              <div className={styles.price}>
                 <p>{new Date(post.createdAt).toLocaleDateString("fa-IR")}</p>
                 <span>{sp(post.amount)} تومان</span>
               </div>
