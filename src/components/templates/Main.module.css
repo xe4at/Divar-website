@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: calc(100% - 200px); /* اصلاح خطا در محاسبه عرض */
+    gap: 20px; /* اضافه کردن فاصله بین کارت‌ها */
+  }
+  
+  .card {
+    width: 330px;
+    display: flex;
+    flex-direction: column; /* تغییر جهت به ستون برای ظاهر بهتر */
+    justify-content: space-between;
+    border: none;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px; /* افزایش گردی گوشه‌ها */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* اضافه کردن سایه */
+    transition: transform 0.3s, box-shadow 0.3s; /* اضافه کردن انیمیشن تغییر */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* تغییر مکان کارت به بالا هنگام هاور */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* افزایش سایه هنگام هاور */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px; /* تنظیم ارتفاع ثابت برای مکان‌نمای تصویر */
+    border-radius: 10px; /* افزایش گردی گوشه‌های تصویر */
+    object-fit: cover;
+    margin-bottom: 15px; /* اضافه کردن فاصله پایین تصویر */
+    background-color: #f0f0f0; /* رنگ پس‌زمینه برای مکان‌نمای تصویر */
+    display: block;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px; /* اضافه کردن فاصله بین عناصر درون info */
+  }
+  
+  .info p {
+    margin: 5px 0;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .info div {
+    color: grey;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
